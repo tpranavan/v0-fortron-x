@@ -1,14 +1,12 @@
-'use client'
-import React from 'react'
-import { ArrowRight, Star, Sparkles, Zap } from 'lucide-react'
-import AutoScroller from '../InfinityScroll/AutoScroller'
+"use client"
+import { ArrowRight, Star, Sparkles, Zap } from "lucide-react"
+import AutoScroller from "../InfinityScroll/AutoScroller"
 
 const Hero = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50">
-        
         {/* Background Blobs */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
@@ -29,7 +27,6 @@ const Hero = () => {
 
         {/* Main Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-          
           {/* Badge */}
           <div className="mb-8 inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm border border-purple-200 text-purple-700 text-sm font-medium rounded shadow-md hover:scale-105 transition-transform duration-300">
             <Star className="w-4 h-4 mr-2" />
@@ -54,14 +51,24 @@ const Hero = () => {
             We’re your partner for <span className="font-medium text-gray-800">growth and innovation.</span>
           </p>
 
-          {/* CTA Button */}
-          <button
-            type="button"
-            className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105"
-          >
-            Book a Free Consultation
-            <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
+              type="button"
+              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105"
+            >
+              Book a Free Consultation
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+
+            <button
+              type="button"
+              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105"
+            >
+              View Portfolio
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+          </div>
         </div>
 
         {/* Bottom Gradient Fade */}
