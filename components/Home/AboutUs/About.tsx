@@ -1,5 +1,15 @@
 "use client"
-import { Award, Users, Target, Zap, Shield, Clock, Heart } from "lucide-react"
+import {
+  Award,
+  Users,
+  Target,
+  Zap,
+  Shield,
+  Clock,
+  Heart,
+  Star,
+  
+} from "lucide-react"
 
 const About = () => {
   const whyBestFeatures = [
@@ -41,6 +51,8 @@ const About = () => {
     },
   ]
 
+
+
   const stats = [
     { number: "500+", label: "Projects Completed" },
     { number: "98%", label: "Client Satisfaction" },
@@ -64,8 +76,8 @@ const About = () => {
             </span>
           </h1>
           <p className="text-gray-600 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed mb-12">
-            We&apos;re a passionate team of innovators, designers, and developers dedicated to helping businesses thrive
-            in the digital world. Our mission is to transform your vision into powerful solutions that drive growth and
+            We&apos;re a passionate team of innovators, designers, and developers dedicated to helping businesses thrive in
+            the digital world. Our mission is to transform your vision into powerful solutions that drive growth and
             success.
           </p>
 
@@ -82,6 +94,53 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Why We Are Best Section */}
+      <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto -mt-17">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 px-4 py-2 rounded-full text-sm font-medium text-green-700 mb-6">
+            <Star className="w-4 h-4" />
+            Why Choose Us
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            Why We Are The{" "}
+            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              Best Choice
+            </span>
+          </h2>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            We don&apos;t just deliver projects; we build lasting partnerships. Here&apos;s what sets us apart from the
+            competition and makes us the preferred choice for businesses worldwide.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {whyBestFeatures.map((feature, index) => {
+            const IconComponent = feature.icon
+            return (
+              <div
+                key={index}
+                className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-gray-200 hover:-translate-y-2"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative z-10">
+                  <div
+                    className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.gradient} mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+
+
     </div>
   )
 }
